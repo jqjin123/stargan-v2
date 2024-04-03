@@ -186,7 +186,7 @@ class ConvBlock(nn.Module):
         out3 += residual
         return out3
 
-
+# 预训练好的人脸关键点模型FAN（ICCV2019 AdaptiveWingLoss），其作用为产生关键部位的mask，使得原图像mask区域在转换后仍能得以保留
 class FAN(nn.Module):
     def __init__(self, num_modules=1, end_relu=False, num_landmarks=98, fname_pretrained=None):
         super(FAN, self).__init__()
